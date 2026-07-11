@@ -1,0 +1,131 @@
+{
+  "nav": {
+    "films": "Filmler",
+    "festivals": "Festivaller",
+    "login": "Giriş Yap"
+  },
+  "home": {
+    "thisWeek": "Bu Hafta Öne Çıkanlar",
+    "auteur": "Auteur Sineması",
+    "independent": "Bağımsız Filmler",
+    "upcomingFestivals": "Yaklaşan Festivaller",
+    "seeCalendar": "Takvimi Gör →",
+    "seeAll": "Tümünü Gör →",
+    "editorPick": "Editörün Seçimi",
+    "goToFilm": "Filme Git"
+  },
+  "films": {
+    "title": "Katalog",
+    "filmCount": "{count} film",
+    "noResults": "Sonuç Yok",
+    "emptyFiltered": "Bu kriterlere uyan film bulunamadı.",
+    "emptyCatalog": "Katalog boş görünüyor.",
+    "clearFilters": "← Filtreleri temizle",
+    "prevPage": "← Önceki",
+    "nextPage": "Sonraki →",
+    "noPoster": "Poster Yok"
+  },
+  "filmDetail": {
+    "director": "Yönetmen",
+    "cast": "Oyuncular",
+    "similar": "Benzer Filmler",
+    "trailer": "▶ Fragmanı İzle",
+    "noPoster": "Poster Yok"
+  },
+  "festivals": {
+    "title": "Festival Takvimi",
+    "festivalCount": "{count} festival",
+    "noResults": "Sonuç Yok",
+    "ongoing": "— Şu An Devam Ediyor",
+    "upcoming": "— Yaklaşıyor",
+    "past": "— Geçmiş",
+    "statusOngoing": "Devam Ediyor",
+    "statusUpcoming": "Yaklaşıyor",
+    "statusPast": "Sona Erdi",
+    "emptyFiltered": "Bu kriterlere uyan festival bulunamadı.",
+    "emptyAll": "Henüz festival eklenmemiş.",
+    "clearFilters": "← Filtreleri temizle",
+    "back": "← Festival Takvimi"
+  },
+  "filters": {
+    "search": "Film Ara",
+    "searchPlaceholder": "Yönetmen, başlık…",
+    "genre": "Tür",
+    "year": "Yıl",
+    "language": "Dil",
+    "all": "Tümü",
+    "clearFilters": "✕ Filtreleri Temizle",
+    "status": "Durum",
+    "country": "Ülke",
+    "genres": {
+      "18": "Drama",
+      "99": "Belgesel",
+      "36": "Tarih",
+      "878": "Bilim Kurgu",
+      "53": "Gerilim",
+      "10752": "Savaş"
+    },
+    "languages": {
+      "fr": "Fransızca",
+      "it": "İtalyanca",
+      "de": "Almanca",
+      "ja": "Japonca",
+      "ko": "Korece",
+      "ru": "Rusça",
+      "fa": "Farsça",
+      "ro": "Romence"
+    },
+    "statuses": {
+      "ongoing": "Devam Ediyor",
+      "upcoming": "Yaklaşıyor",
+      "past": "Geçmiş"
+    }
+  },
+  "profile": {
+    "title": "Profil",
+    "watched": "İzlenen",
+    "favorites": "Favori",
+    "watchHistory": "İzleme Geçmişi",
+    "favoriteFilms": "Favoriler",
+    "recommendations": "Sana Özel Öneriler",
+    "allCatalog": "Tüm Katalog →",
+    "signOut": "Çıkış Yap →",
+    "member": "Üye:",
+    "film": "film",
+    "noWatched": "Henüz izlenen film yok.",
+    "noWatchedSub": "Bir film izledikten sonra 'İzledim' butonuna bas.",
+    "noFavorites": "Henüz favori film eklenmedi.",
+    "noFavoritesSub": "Film sayfasında kalp ikonuna tıkla.",
+    "noRecommendations": "Öneriler için film izlemeye başla.",
+    "noRecommendationsSub": "İzleme geçmişine göre kişisel öneriler oluşturulur.",
+    "browseCatalog": "Kataloğa Göz At",
+    "discoverFilms": "Filmleri Keşfet",
+    "addToFile": "Dosyaya ekle",
+    "noPoster": "Poster Yok"
+  },
+  "footer": {
+    "tagline": "Bağımsız · Auteur · Deneysel"
+  },
+  "metadata": {
+    "home": {
+      "title": "CineEsprit",
+      "description": "Bağımsız sinema, auteur ve deneysel film platformu"
+    },
+    "films": {
+      "title": "Film Kataloğu — CineEsprit",
+      "description": "Bağımsız, auteur ve deneysel filmlerden oluşan küratöryel katalog. Tür, yıl ve dile göre filtrele."
+    },
+    "festivals": {
+      "title": "Festival Takvimi — CineEsprit",
+      "description": "Dünya genelindeki bağımsız sinema ve film festivallerini keşfet. Yaklaşan, devam eden ve geçmiş festivaller."
+    },
+    "profile": {
+      "title": "Profilim — CineEsprit",
+      "description": "İzleme geçmişin, favorilerin ve kişisel önerilerin."
+    },
+    "auth": {
+      "title": "Giriş Yap — CineEsprit",
+      "description": "CineEsprit'e giriş yap veya hesap oluştur."
+    }
+  }
+}

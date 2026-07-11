@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;background:#0a0a0a}
+  ::selection{background:#d8ff3e;color:#0a0a0a}
+  a{text-decoration:none;color:inherit}
+  .navlink:hover{color:#e8e8e6 !important}
+  .frow:hover{background:#101010}
+  .frow:hover .fday{color:#d8ff3e}
+  .frow:hover .farrow{color:#d8ff3e;transform:translateX(3px)}
+</style>
+</helmet>
+<div style="background:#0a0a0a;color:#e8e8e6;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh">
+
+  <!-- NAV -->
+  <header style="position:sticky;top:0;z-index:20;background:rgba(10,10,10,0.92);backdrop-filter:blur(8px);border-bottom:1px solid #1c1c1c;display:flex;align-items:center;justify-content:space-between;padding:18px 48px">
+    <a href="CineEsprit Anasayfa.dc.html" style="font-family:Georgia,serif;font-style:italic;font-size:23px;letter-spacing:-0.01em">CineEsprit</a>
+    <nav style="display:flex;align-items:center;gap:34px">
+      <a href="#" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a88">Program</a>
+      <a href="#" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a88">Arşiv</a>
+      <a href="#" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#d8ff3e">Festivaller</a>
+      <a href="CineEsprit Listeleme.dc.html" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a88;display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
+        Ara
+      </a>
+    </nav>
+  </header>
+
+  <main style="padding:0 48px">
+
+    <!-- HEADER -->
+    <section style="padding:56px 0 30px;border-bottom:1px solid #1c1c1c;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.2em;color:#6a6a68;margin-bottom:18px">DÜNYA FESTİVAL TAKVİMİ</div>
+        <h1 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:48px;line-height:1;letter-spacing:-0.01em;margin:0">Yaklaşan Festivaller</h1>
+        <div style="font-size:14px;color:#9a9a98;margin-top:14px">Sezon 2026 · <span style="color:#d8ff3e;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.1em">{{ count }} ETKİNLİK</span></div>
+      </div>
+      <!-- type filter -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+          <button onClick="{{ f.onClick }}" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;padding:7px 12px;border-radius:2px;cursor:pointer;background:{{ f.bg }};color:{{ f.color }};border:1px solid {{ f.border }}">{{ f.label }}</button>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- MONTH GROUPS -->
+    <section style="padding:8px 0 96px">
+      <sc-for list="{{ months }}" as="month" hint-placeholder-count="3">
+        <div style="padding:40px 0 0">
+          <div style="display:flex;align-items:baseline;gap:16px;padding-bottom:18px;border-bottom:1px solid #242424">
+            <h2 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:24px;margin:0">{{ month.name }}</h2>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#6a6a68">{{ month.year }} · {{ month.count }} ETKİNLİK</span>
+          </div>
+          <sc-for list="{{ month.events }}" as="ev" hint-placeholder-count="3">
+            <a href="#" class="frow" style="display:flex;gap:28px;padding:26px 8px;border-bottom:1px solid #1c1c1c;align-items:center;transition:background .15s">
+              <!-- big date -->
+              <div style="flex:none;width:88px;text-align:center">
+                <div class="fday" style="font-family:Georgia,serif;font-style:italic;font-size:42px;line-height:0.9;transition:color .18s">{{ ev.day }}</div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#6a6a68;margin-top:6px">{{ ev.mon }}</div>
+              </div>
+              <div style="width:1px;height:48px;background:#242424;flex:none"></div>
+              <!-- info -->
+              <div style="flex:1;min-width:0">
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+                  <h3 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:22px;margin:0">{{ ev.name }}</h3>
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#6a6a68">{{ ev.edition }}</span>
+                </div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#9a9a98">{{ ev.place }} &nbsp;·&nbsp; {{ ev.range }}</div>
+              </div>
+              <!-- type badge -->
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:{{ ev.typeColor }};border:1px solid {{ ev.typeBorder }};background:{{ ev.typeBg }};padding:6px 11px;flex:none">{{ ev.type }}</span>
+              <span class="farrow" style="color:#6a6a68;font-size:14px;flex:none;transition:transform .18s,color .18s">→</span>
+            </a>
+          </sc-for>
+        </div>
+      </sc-for>
+    </section>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { type: "Tümü" };
+
+  data() {
+    return [
+      { day: "02", mon: "EYL", monthKey: "Eylül", year: "2026", name: "Venedik Film Festivali", edition: "83. ED.", place: "VENEDİK, İTALYA", range: "02 — 12 EYLÜL", type: "A SINIFI" },
+      { day: "04", mon: "EYL", monthKey: "Eylül", year: "2026", name: "Toronto (TIFF)", edition: "51. ED.", place: "TORONTO, KANADA", range: "04 — 14 EYLÜL", type: "A SINIFI" },
+      { day: "18", mon: "EYL", monthKey: "Eylül", year: "2026", name: "!f İstanbul Bağımsız", edition: "25. ED.", place: "İSTANBUL, TÜRKİYE", range: "18 — 28 EYLÜL", type: "ULUSAL" },
+      { day: "24", mon: "EYL", monthKey: "Eylül", year: "2026", name: "Viennale", edition: "64. ED.", place: "VİYANA, AVUSTURYA", range: "24 EYL — 02 EKİ", type: "BAĞIMSIZ" },
+      { day: "06", mon: "EKİ", monthKey: "Ekim", year: "2026", name: "New York Film Festivali", edition: "64. ED.", place: "NEW YORK, ABD", range: "06 — 17 EKİM", type: "SEÇKİ" },
+      { day: "12", mon: "EKİ", monthKey: "Ekim", year: "2026", name: "Rotterdam Deneysel (IFFR)", edition: "55. ED.", place: "ROTTERDAM, HOLLANDA", range: "12 — 22 EKİM", type: "DENEYSEL" },
+      { day: "20", mon: "EKİ", monthKey: "Ekim", year: "2026", name: "Antalya Altın Portakal", edition: "63. ED.", place: "ANTALYA, TÜRKİYE", range: "20 — 27 EKİM", type: "ULUSAL" },
+      { day: "07", mon: "KAS", monthKey: "Kasım", year: "2026", name: "Locarno Kış Seçkisi", edition: "12. ED.", place: "LOCARNO, İSVİÇRE", range: "07 — 15 KASIM", type: "BAĞIMSIZ" },
+      { day: "13", mon: "KAS", monthKey: "Kasım", year: "2026", name: "Doclisboa", edition: "24. ED.", place: "LİZBON, PORTEKİZ", range: "13 — 23 KASIM", type: "DENEYSEL" },
+    ];
+  }
+
+  typeStyle(t) {
+    if (t === "A SINIFI") return { color: "#0a0a0a", border: "#d8ff3e", bg: "#d8ff3e" };
+    if (t === "DENEYSEL") return { color: "#d8ff3e", border: "#d8ff3e", bg: "transparent" };
+    return { color: "#c8c8c6", border: "#3a3a3a", bg: "transparent" };
+  }
+
+  chip(active) {
+    return active
+      ? { bg: "#d8ff3e", color: "#0a0a0a", border: "#d8ff3e" }
+      : { bg: "transparent", color: "#9a9a98", border: "#2e2e2e" };
+  }
+
+  renderVals() {
+    let list = this.data();
+    if (this.state.type !== "Tümü") list = list.filter(e => e.type === this.state.type);
+
+    // group by month preserving order
+    const order = [];
+    const map = {};
+    list.forEach(e => {
+      const k = e.monthKey;
+      if (!map[k]) { map[k] = { name: k, year: e.year, events: [] }; order.push(k); }
+      map[k].events.push({ ...e, ...((s) => ({ typeColor: s.color, typeBorder: s.border, typeBg: s.bg }))(this.typeStyle(e.type)) });
+    });
+    const months = order.map(k => ({ ...map[k], count: String(map[k].events.length).padStart(2, "0") }));
+
+    const types = ["Tümü", "A SINIFI", "ULUSAL", "BAĞIMSIZ", "DENEYSEL", "SEÇKİ"];
+    return {
+      count: String(list.length).padStart(2, "0"),
+      filters: types.map(t => {
+        const c = this.chip(this.state.type === t);
+        return { label: t, ...c, onClick: () => this.setState({ type: t }) };
+      }),
+      months
+    };
+  }
+}
+</script>
+</body>
+</html>

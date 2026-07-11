@@ -1,0 +1,131 @@
+{
+  "nav": {
+    "films": "Films",
+    "festivals": "Festivals",
+    "login": "Sign In"
+  },
+  "home": {
+    "thisWeek": "Featured This Week",
+    "auteur": "Auteur Cinema",
+    "independent": "Independent Films",
+    "upcomingFestivals": "Upcoming Festivals",
+    "seeCalendar": "See Calendar →",
+    "seeAll": "See All →",
+    "editorPick": "Editor's Pick",
+    "goToFilm": "Go to Film"
+  },
+  "films": {
+    "title": "Catalogue",
+    "filmCount": "{count} films",
+    "noResults": "No Results",
+    "emptyFiltered": "No films match this criteria.",
+    "emptyCatalog": "The catalogue looks empty.",
+    "clearFilters": "← Clear filters",
+    "prevPage": "← Previous",
+    "nextPage": "Next →",
+    "noPoster": "No Poster"
+  },
+  "filmDetail": {
+    "director": "Director",
+    "cast": "Cast",
+    "similar": "Similar Films",
+    "trailer": "▶ Watch Trailer",
+    "noPoster": "No Poster"
+  },
+  "festivals": {
+    "title": "Festival Calendar",
+    "festivalCount": "{count} festivals",
+    "noResults": "No Results",
+    "ongoing": "— Currently Running",
+    "upcoming": "— Upcoming",
+    "past": "— Past",
+    "statusOngoing": "Ongoing",
+    "statusUpcoming": "Upcoming",
+    "statusPast": "Ended",
+    "emptyFiltered": "No festivals match this criteria.",
+    "emptyAll": "No festivals added yet.",
+    "clearFilters": "← Clear filters",
+    "back": "← Festival Calendar"
+  },
+  "filters": {
+    "search": "Search Films",
+    "searchPlaceholder": "Director, title…",
+    "genre": "Genre",
+    "year": "Year",
+    "language": "Language",
+    "all": "All",
+    "clearFilters": "✕ Clear Filters",
+    "status": "Status",
+    "country": "Country",
+    "genres": {
+      "18": "Drama",
+      "99": "Documentary",
+      "36": "History",
+      "878": "Science Fiction",
+      "53": "Thriller",
+      "10752": "War"
+    },
+    "languages": {
+      "fr": "French",
+      "it": "Italian",
+      "de": "German",
+      "ja": "Japanese",
+      "ko": "Korean",
+      "ru": "Russian",
+      "fa": "Persian",
+      "ro": "Romanian"
+    },
+    "statuses": {
+      "ongoing": "Ongoing",
+      "upcoming": "Upcoming",
+      "past": "Past"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "watched": "Watched",
+    "favorites": "Favorites",
+    "watchHistory": "Watch History",
+    "favoriteFilms": "Favorites",
+    "recommendations": "Personalized Picks",
+    "allCatalog": "Full Catalogue →",
+    "signOut": "Sign Out →",
+    "member": "Member since:",
+    "film": "films",
+    "noWatched": "No films watched yet.",
+    "noWatchedSub": "After watching a film, hit the 'Watched' button.",
+    "noFavorites": "No favorite films yet.",
+    "noFavoritesSub": "Click the heart icon on a film page.",
+    "noRecommendations": "Watch some films to get recommendations.",
+    "noRecommendationsSub": "Personal picks are generated from your watch history.",
+    "browseCatalog": "Browse Catalogue",
+    "discoverFilms": "Discover Films",
+    "addToFile": "Add to list",
+    "noPoster": "No Poster"
+  },
+  "footer": {
+    "tagline": "Independent · Auteur · Experimental"
+  },
+  "metadata": {
+    "home": {
+      "title": "CineEsprit",
+      "description": "Platform for independent, auteur and experimental cinema"
+    },
+    "films": {
+      "title": "Film Catalogue — CineEsprit",
+      "description": "Curatorial catalogue of independent, auteur and experimental films. Filter by genre, year and language."
+    },
+    "festivals": {
+      "title": "Festival Calendar — CineEsprit",
+      "description": "Discover independent cinema and film festivals from around the world. Upcoming, ongoing and past festivals."
+    },
+    "profile": {
+      "title": "My Profile — CineEsprit",
+      "description": "Your watch history, favorites and personal recommendations."
+    },
+    "auth": {
+      "title": "Sign In — CineEsprit",
+      "description": "Sign in to CineEsprit or create an account."
+    }
+  }
+}

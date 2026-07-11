@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;background:#0a0a0a}
+  ::selection{background:#d8ff3e;color:#0a0a0a}
+  a{text-decoration:none;color:inherit}
+  .navlink:hover{color:#e8e8e6 !important}
+  .film:hover .poster{border-color:#3a3a3a}
+  .film:hover .title{color:#fff}
+  .rec:hover{border-color:#3a3a3a !important}
+  .rec:hover .recarrow{color:#d8ff3e;transform:translateX(3px)}
+</style>
+</helmet>
+<div style="background:#0a0a0a;color:#e8e8e6;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh">
+
+  <!-- NAV -->
+  <header style="position:sticky;top:0;z-index:20;background:rgba(10,10,10,0.92);backdrop-filter:blur(8px);border-bottom:1px solid #1c1c1c;display:flex;align-items:center;justify-content:space-between;padding:18px 48px">
+    <a href="CineEsprit Anasayfa.dc.html" style="font-family:Georgia,serif;font-style:italic;font-size:23px;letter-spacing:-0.01em">CineEsprit</a>
+    <nav style="display:flex;align-items:center;gap:34px">
+      <a href="#" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a88">Program</a>
+      <a href="#" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a88">Arşiv</a>
+      <a href="CineEsprit Festival Takvimi.dc.html" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a88">Festivaller</a>
+      <a href="CineEsprit Listeleme.dc.html" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a88;display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
+        Ara
+      </a>
+      <span style="width:30px;height:30px;border:1px solid #d8ff3e;border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-style:italic;font-size:14px;color:#d8ff3e">M</span>
+    </nav>
+  </header>
+
+  <main style="padding:0 48px">
+
+    <!-- PROFILE HEADER -->
+    <section style="padding:56px 0 40px;border-bottom:1px solid #1c1c1c;display:flex;align-items:center;gap:32px">
+      <div style="width:84px;height:84px;flex:none;border:1px solid #d8ff3e;border-radius:3px;background:#0d0d0d;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-style:italic;font-size:38px;color:#d8ff3e">M</div>
+      <div style="flex:1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#6a6a68;margin-bottom:12px">SİNEFİL · ÜYE</div>
+        <h1 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:44px;line-height:1;letter-spacing:-0.01em;margin:0">Mira Yıldırım</h1>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#9a9a98;margin-top:12px">ÜYELİK: MART 2024 &nbsp;·&nbsp; <span style="color:#d8ff3e">42 FİLM İZLENDİ</span> &nbsp;·&nbsp; 18 FESTİVAL TAKİBİ</div>
+      </div>
+      <a href="#" style="font-family:inherit;font-size:13px;font-weight:500;letter-spacing:0.04em;color:#e8e8e6;border:1px solid #3a3a3a;border-radius:2px;padding:12px 22px;flex:none">Profili Düzenle</a>
+    </section>
+
+    <!-- WATCH HISTORY -->
+    <section style="padding:56px 0;border-bottom:1px solid #1c1c1c">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:32px">
+        <div style="display:flex;align-items:baseline;gap:16px">
+          <h2 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:26px;margin:0">İzleme Geçmişi</h2>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#6a6a68">/ SON İZLENENLER</span>
+        </div>
+        <a href="#" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8a8a88">Tümü →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:20px">
+        <sc-for list="{{ history }}" as="film" hint-placeholder-count="6">
+          <a href="CineEsprit Film Detay.dc.html" class="film" style="display:block">
+            <div class="poster" style="aspect-ratio:2/3;background:repeating-linear-gradient(135deg,#1a1a1a 0 9px,#151515 9px 18px);border:1px solid #242424;border-radius:3px;position:relative;display:flex;align-items:flex-end;padding:9px;transition:border-color .18s">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.1em;color:{{ film.tagColor }};border:1px solid {{ film.tagBorder }};padding:3px 5px;background:#0a0a0a">{{ film.cat }}</span>
+            </div>
+            <h3 class="title" style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:14px;line-height:1.2;margin:11px 0 4px;transition:color .18s">{{ film.title }}</h3>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.1em;color:#6a6a68">{{ film.watched }}</div>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- CATEGORY DISTRIBUTION -->
+    <section style="padding:56px 0;border-bottom:1px solid #1c1c1c">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:32px">
+        <h2 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:26px;margin:0">Tercih Ettiğin Kategoriler</h2>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#6a6a68">/ 42 FİLM ÜZERİNDEN</span>
+      </div>
+
+      <div style="max-width:760px">
+        <!-- stacked bar -->
+        <div style="display:flex;height:54px;border:1px solid #242424;border-radius:3px;overflow:hidden;margin-bottom:28px">
+          <sc-for list="{{ dist }}" as="d" hint-placeholder-count="3">
+            <div style="width:{{ d.pct }}%;background:{{ d.fill }};display:flex;align-items:center;justify-content:center;border-right:1px solid #0a0a0a">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:{{ d.labelColor }}">{{ d.pctLabel }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <!-- legend -->
+        <div style="display:flex;flex-direction:column;gap:0">
+          <sc-for list="{{ dist }}" as="d" hint-placeholder-count="3">
+            <div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid #1c1c1c">
+              <span style="width:10px;height:10px;flex:none;background:{{ d.fill }};border:1px solid {{ d.swatchBorder }}"></span>
+              <span style="font-family:Georgia,serif;font-style:italic;font-size:18px;width:130px;flex:none">{{ d.label }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#9a9a98;width:70px;flex:none">{{ d.count }} FİLM</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#6a6a68;flex:1">{{ d.note }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:{{ d.pctColor }};flex:none">{{ d.pctLabel }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOMMENDATIONS -->
+    <section style="padding:56px 0 96px">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:32px">
+        <h2 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:26px;margin:0">Sana Özel Öneriler</h2>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#6a6a68">/ İZLEME GEÇMİŞİNE GÖRE</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
+        <sc-for list="{{ recs }}" as="r" hint-placeholder-count="4">
+          <a href="CineEsprit Film Detay.dc.html" class="rec" style="display:flex;gap:20px;border:1px solid #242424;border-radius:3px;background:#0d0d0d;padding:20px;transition:border-color .2s">
+            <div style="width:78px;flex:none;aspect-ratio:2/3;background:repeating-linear-gradient(135deg,#1a1a1a 0 8px,#151515 8px 16px);border:1px solid #242424;border-radius:2px;display:flex;align-items:flex-start;padding:7px">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:0.08em;color:{{ r.tagColor }};border:1px solid {{ r.tagBorder }};padding:2px 4px;background:#0a0a0a">{{ r.cat }}</span>
+            </div>
+            <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.12em;color:#6a6a68;margin-bottom:7px">{{ r.meta }}</div>
+              <h3 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:20px;line-height:1.12;margin:0 0 12px">{{ r.title }}</h3>
+              <div style="margin-top:auto;border-top:1px solid #1c1c1c;padding-top:12px;display:flex;align-items:flex-start;gap:8px">
+                <span style="width:5px;height:5px;background:#d8ff3e;display:inline-block;margin-top:5px;flex:none"></span>
+                <span style="font-size:12px;line-height:1.5;color:#9a9a98">{{ r.reason }}</span>
+                <span class="recarrow" style="color:#6a6a68;font-size:13px;flex:none;margin-left:auto;transition:transform .18s,color .18s">→</span>
+              </div>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const auteur = { tagColor: "#d8ff3e", tagBorder: "#d8ff3e" };
+    const neutral = { tagColor: "#c8c8c6", tagBorder: "#3a3a3a" };
+    return {
+      history: [
+        { title: "Persona'nın Gölgesi", cat: "AUTEUR", watched: "3 GÜN ÖNCE", ...auteur },
+        { title: "Durgun Sular Bölgesi", cat: "AUTEUR", watched: "1 HAFTA ÖNCE", ...auteur },
+        { title: "Toz ve Bakır", cat: "BAĞIMSIZ", watched: "1 HAFTA ÖNCE", ...neutral },
+        { title: "Işık Üzerine Çalışmalar", cat: "DENEYSEL", watched: "2 HAFTA ÖNCE", ...neutral },
+        { title: "Mevsimsiz Kar", cat: "AUTEUR", watched: "3 HAFTA ÖNCE", ...auteur },
+        { title: "Çerçevenin Dışı", cat: "DENEYSEL", watched: "GEÇEN AY", ...neutral },
+      ],
+      dist: [
+        { label: "Auteur", count: "21", pct: 50, pctLabel: "%50", fill: "#d8ff3e", labelColor: "#0a0a0a", swatchBorder: "#d8ff3e", pctColor: "#d8ff3e", note: "EN ÇOK İZLEDİĞİN" },
+        { label: "Bağımsız", count: "13", pct: 30, pctLabel: "%30", fill: "#3a3a38", labelColor: "#c8c8c6", swatchBorder: "#4a4a48", pctColor: "#c8c8c6", note: "DÜZENLİ" },
+        { label: "Deneysel", count: "08", pct: 20, pctLabel: "%20", fill: "#1f1f1d", labelColor: "#9a9a98", swatchBorder: "#2e2e2e", pctColor: "#9a9a98", note: "ARTAN İLGİ" },
+      ],
+      recs: [
+        { title: "Yer Altı Güneşi", cat: "AUTEUR", meta: "2025 · İRAN · 121 DK", reason: "Beğendiğin “Persona'nın Gölgesi” ile aynı modernist sessizlik geleneğinden", ...auteur },
+        { title: "Beyaz Gürültünün İçinde", cat: "AUTEUR", meta: "2026 · FRANSA · 128 DK", reason: "En çok izlediğin kategori Auteur — Cannes 2026 seçkisinden", ...auteur },
+        { title: "Lizbon'a Mektuplar", cat: "BAĞIMSIZ", meta: "2025 · PORTEKİZ · 117 DK", reason: "“Toz ve Bakır” filmini izleyenlerin sıkça tercih ettiği yavaş sinema", ...neutral },
+        { title: "Sentetik Hafıza", cat: "DENEYSEL", meta: "2026 · KORE · 72 DK", reason: "Deneysel filmlere artan ilgine göre — Berlinale 2026", ...neutral },
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

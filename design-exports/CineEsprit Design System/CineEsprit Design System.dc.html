@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;background:#0a0a0a}
+  ::selection{background:#d8ff3e;color:#0a0a0a}
+</style>
+</helmet>
+<div style="background:#0a0a0a;color:#e8e8e6;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;padding:0 0 120px">
+
+  <!-- MASTHEAD -->
+  <header style="border-bottom:1px solid #242424;padding:56px 64px 40px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#6a6a68;margin-bottom:20px">Design System — v0.1 · Geçici</div>
+      <h1 style="font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;font-size:64px;line-height:0.95;margin:0;letter-spacing:-0.01em">CineEsprit</h1>
+      <p style="margin:18px 0 0;max-width:440px;font-size:14px;line-height:1.6;color:#9a9a98">Bağımsız sinema, auteur ve deneysel film için katalog &amp; festival takvimi. Bu doküman görsel dilin temellerini tanımlar.</p>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#0a0a0a;background:#d8ff3e;padding:6px 10px">SİNEMATEK</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#9a9a98;border:1px solid #2e2e2e;padding:5px 10px">KATALOG</span>
+    </div>
+  </header>
+
+  <main style="padding:0 64px">
+
+    <!-- 01 COLOR -->
+    <section style="padding:64px 0 56px;border-bottom:1px solid #1c1c1c">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:36px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#d8ff3e;letter-spacing:0.1em">01</span>
+        <h2 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:26px;margin:0">Renk Paleti</h2>
+        <span style="font-size:12px;color:#6a6a68;margin-left:auto;max-width:280px;text-align:right;line-height:1.5">Neredeyse siyah zemin, tek asit yeşili vurgu. Vurgu az ve bilinçli kullanılır.</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:#1c1c1c;border:1px solid #1c1c1c">
+        <!-- swatch -->
+        <div style="background:#0a0a0a;padding:24px 20px 20px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between">
+          <div style="width:48px;height:48px;background:#0a0a0a;border:1px solid #2e2e2e"></div>
+          <div>
+            <div style="font-size:13px;font-weight:500;margin-bottom:4px">Zemin / Base</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6a6a68">#0A0A0A</div>
+          </div>
+        </div>
+        <div style="background:#0a0a0a;padding:24px 20px 20px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between">
+          <div style="width:48px;height:48px;background:#141414;border:1px solid #2e2e2e"></div>
+          <div>
+            <div style="font-size:13px;font-weight:500;margin-bottom:4px">Kart / Panel</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6a6a68">#141414</div>
+          </div>
+        </div>
+        <div style="background:#0a0a0a;padding:24px 20px 20px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between">
+          <div style="width:48px;height:48px;background:#242424;border:1px solid #2e2e2e"></div>
+          <div>
+            <div style="font-size:13px;font-weight:500;margin-bottom:4px">Kenarlık / Çizgi</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6a6a68">#242424</div>
+          </div>
+        </div>
+        <div style="background:#0a0a0a;padding:24px 20px 20px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between">
+          <div style="width:48px;height:48px;background:#d8ff3e"></div>
+          <div>
+            <div style="font-size:13px;font-weight:500;margin-bottom:4px">Asit Yeşili / Vurgu</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6a6a68">#D8FF3E</div>
+          </div>
+        </div>
+        <div style="background:#0a0a0a;padding:24px 20px 20px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between">
+          <div style="width:48px;height:48px;background:#e8e8e6"></div>
+          <div>
+            <div style="font-size:13px;font-weight:500;margin-bottom:4px">Metin / Birincil</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6a6a68">#E8E8E6</div>
+          </div>
+        </div>
+        <div style="background:#0a0a0a;padding:24px 20px 20px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between">
+          <div style="width:48px;height:48px;background:#9a9a98"></div>
+          <div>
+            <div style="font-size:13px;font-weight:500;margin-bottom:4px">Metin / İkincil</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6a6a68">#9A9A98</div>
+          </div>
+        </div>
+        <div style="background:#0a0a0a;padding:24px 20px 20px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between">
+          <div style="width:48px;height:48px;background:#6a6a68"></div>
+          <div>
+            <div style="font-size:13px;font-weight:500;margin-bottom:4px">Metin / Soluk</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6a6a68">#6A6A68</div>
+          </div>
+        </div>
+      </div>
+      <p style="margin:22px 0 0;font-size:12.5px;line-height:1.6;color:#6a6a68;max-width:620px"><span style="color:#d8ff3e">Kural:</span> Asit yeşili yalnızca aktif durum, seçili sekme, birincil CTA ve önemli etiketlerde. Bir ekranda nadiren 2-3 vurgudan fazlası bulunmaz — zeminde nefes alan boşluk esastır.</p>
+    </section>
+
+    <!-- 02 TYPOGRAPHY -->
+    <section style="padding:64px 0 56px;border-bottom:1px solid #1c1c1c">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:36px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#d8ff3e;letter-spacing:0.1em">02</span>
+        <h2 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:26px;margin:0">Tipografi</h2>
+        <span style="font-size:12px;color:#6a6a68;margin-left:auto;max-width:300px;text-align:right;line-height:1.5">İtalik serif başlıklar (Georgia), sade sans gövde, monospace üst-veri.</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:0">
+        <div style="display:flex;align-items:baseline;gap:32px;padding:22px 0;border-top:1px solid #1c1c1c">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#6a6a68;width:130px;flex:none;letter-spacing:0.06em">DISPLAY · 64 / Georgia İtalik</span>
+          <span style="font-family:Georgia,serif;font-style:italic;font-size:56px;line-height:1;letter-spacing:-0.01em">Auteur Sineması</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:32px;padding:22px 0;border-top:1px solid #1c1c1c">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#6a6a68;width:130px;flex:none;letter-spacing:0.06em">BAŞLIK · 32 / Georgia İtalik</span>
+          <span style="font-family:Georgia,serif;font-style:italic;font-size:32px;line-height:1.1">Festival Takvimi</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:32px;padding:22px 0;border-top:1px solid #1c1c1c">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#6a6a68;width:130px;flex:none;letter-spacing:0.06em">ALT BAŞLIK · 20 / Sans 500</span>
+          <span style="font-size:20px;font-weight:500;line-height:1.3">Deneysel ve avangart seçki</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:32px;padding:22px 0;border-top:1px solid #1c1c1c">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#6a6a68;width:130px;flex:none;letter-spacing:0.06em">GÖVDE · 15 / Sans 400</span>
+          <span style="font-size:15px;line-height:1.65;color:#c8c8c6;max-width:560px">Sinematek geleneğinden gelen bir editoryal ton: az konuşan, ciddi, kataloğa yakın. Metin bloklarında satır yüksekliği ferah tutulur, vurgu için yalnızca italik serif kullanılır.</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:32px;padding:22px 0;border-top:1px solid #1c1c1c">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#6a6a68;width:130px;flex:none;letter-spacing:0.06em">ÜST-VERİ · 11 / Mono CAPS</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#9a9a98">1962 · FRANSA · 110 DK · 35MM</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 BUTTONS -->
+    <section style="padding:64px 0 56px;border-bottom:1px solid #1c1c1c">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:36px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#d8ff3e;letter-spacing:0.1em">03</span>
+        <h2 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:26px;margin:0">Butonlar</h2>
+        <span style="font-size:12px;color:#6a6a68;margin-left:auto;max-width:280px;text-align:right;line-height:1.5">Keskin kenar (2px), pill yok. Vurgu butonu seyrek kullanılır.</span>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+        <button style="font-family:inherit;font-size:13px;font-weight:500;letter-spacing:0.04em;color:#0a0a0a;background:#d8ff3e;border:none;border-radius:2px;padding:13px 26px;cursor:pointer">Bileti Al</button>
+        <button style="font-family:inherit;font-size:13px;font-weight:500;letter-spacing:0.04em;color:#e8e8e6;background:transparent;border:1px solid #3a3a3a;border-radius:2px;padding:12px 25px;cursor:pointer">Programa Ekle</button>
+        <button style="font-family:inherit;font-size:13px;font-weight:500;letter-spacing:0.04em;color:#9a9a98;background:transparent;border:none;border-radius:2px;padding:13px 12px;cursor:pointer">Detaylar →</button>
+        <button style="font-family:inherit;font-size:13px;font-weight:500;letter-spacing:0.04em;color:#4a4a48;background:#141414;border:1px solid #1c1c1c;border-radius:2px;padding:12px 25px;cursor:not-allowed">Tükendi</button>
+      </div>
+      <div style="display:flex;gap:48px;margin-top:28px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#6a6a68;letter-spacing:0.06em;flex-wrap:wrap">
+        <span>BİRİNCİL / ASİT</span><span>İKİNCİL / ÇERÇEVE</span><span>HAYALET / METİN</span><span>PASİF</span>
+      </div>
+    </section>
+
+    <!-- 04 TAGS -->
+    <section style="padding:64px 0 56px;border-bottom:1px solid #1c1c1c">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:36px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#d8ff3e;letter-spacing:0.1em">04</span>
+        <h2 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:26px;margin:0">Etiket &amp; Rozet</h2>
+        <span style="font-size:12px;color:#6a6a68;margin-left:auto;max-width:300px;text-align:right;line-height:1.5">İnce çerçeveli, mono, küçük. Kategori ve festival sınıfı için.</span>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:24px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#d8ff3e;border:1px solid #d8ff3e;padding:5px 9px">AUTEUR</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#c8c8c6;border:1px solid #3a3a3a;padding:5px 9px">DENEYSEL</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#c8c8c6;border:1px solid #3a3a3a;padding:5px 9px">BAĞIMSIZ</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#c8c8c6;border:1px solid #3a3a3a;padding:5px 9px">AVANGART</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#0a0a0a;background:#d8ff3e;padding:5px 9px">A SINIFI</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#6a6a68;border:1px solid #242424;padding:5px 9px">RESTORASYON</span>
+      </div>
+      <div style="display:flex;gap:40px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#6a6a68;letter-spacing:0.06em;flex-wrap:wrap">
+        <span>VURGU / SEÇİLİ</span><span>NÖTR / KATEGORİ</span><span>DOLU / FESTİVAL SINIFI</span>
+      </div>
+    </section>
+
+    <!-- 05 CARDS -->
+    <section style="padding:64px 0 0">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:36px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#d8ff3e;letter-spacing:0.1em">05</span>
+        <h2 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:26px;margin:0">Kartlar</h2>
+        <span style="font-size:12px;color:#6a6a68;margin-left:auto;max-width:300px;text-align:right;line-height:1.5">Film künyesi ve festival takvim satırı — keskin, çerçeveli.</span>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start">
+
+        <!-- FILM CARD -->
+        <div style="width:280px;background:#141414;border:1px solid #242424;border-radius:3px;overflow:hidden">
+          <div style="aspect-ratio:2/3;background:repeating-linear-gradient(135deg,#1a1a1a 0 10px,#161616 10px 20px);position:relative;display:flex;align-items:flex-end;padding:14px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#5a5a58;letter-spacing:0.1em;position:absolute;top:14px;left:14px">[ AFİŞ GÖRSELİ ]</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#d8ff3e;border:1px solid #d8ff3e;padding:4px 8px;background:#0a0a0a">AUTEUR</span>
+          </div>
+          <div style="padding:18px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#6a6a68;margin-bottom:10px">1966 · İTALYA · 110 DK</div>
+            <h3 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:21px;line-height:1.15;margin:0 0 6px">Persona'nın Gölgesi</h3>
+            <p style="font-size:12.5px;line-height:1.55;color:#9a9a98;margin:0 0 16px">Sessizliğin ve kimliğin dağılışı üzerine modernist bir başyapıt.</p>
+            <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #242424;padding-top:14px">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#6a6a68;letter-spacing:0.08em">DOSYAYA EKLE</span>
+              <span style="color:#d8ff3e;font-size:14px">→</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- FESTIVAL CALENDAR CARD -->
+        <div style="width:420px;background:#141414;border:1px solid #242424;border-radius:3px">
+          <div style="padding:16px 20px;border-bottom:1px solid #242424;display:flex;justify-content:space-between;align-items:center">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#9a9a98">FESTİVAL TAKVİMİ</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#d8ff3e;letter-spacing:0.1em">EYLÜL 2026</span>
+          </div>
+          <!-- row -->
+          <div style="display:flex;gap:18px;padding:18px 20px;border-bottom:1px solid #1c1c1c;align-items:flex-start">
+            <div style="text-align:center;flex:none;width:46px">
+              <div style="font-family:Georgia,serif;font-style:italic;font-size:26px;line-height:1">02</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#6a6a68;letter-spacing:0.12em;margin-top:2px">— 12</div>
+            </div>
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+                <h4 style="font-size:15px;font-weight:500;margin:0">Venedik Film Festivali</h4>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.12em;color:#0a0a0a;background:#d8ff3e;padding:3px 6px">A SINIFI</span>
+              </div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#6a6a68;letter-spacing:0.08em">VENEDİK, İTALYA · 83. EDİSYON</div>
+            </div>
+            <span style="color:#9a9a98;font-size:13px">→</span>
+          </div>
+          <div style="display:flex;gap:18px;padding:18px 20px;align-items:flex-start">
+            <div style="text-align:center;flex:none;width:46px">
+              <div style="font-family:Georgia,serif;font-style:italic;font-size:26px;line-height:1">24</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#6a6a68;letter-spacing:0.12em;margin-top:2px">— 02</div>
+            </div>
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+                <h4 style="font-size:15px;font-weight:500;margin:0">Viennale</h4>
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.12em;color:#c8c8c6;border:1px solid #3a3a3a;padding:2px 6px">BAĞIMSIZ</span>
+              </div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#6a6a68;letter-spacing:0.08em">VİYANA, AVUSTURYA · 64. EDİSYON</div>
+            </div>
+            <span style="color:#9a9a98;font-size:13px">→</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+</x-dc>
+</body>
+</html>

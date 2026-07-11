@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style data-omelette-print-defaults>
+@media print {
+  @page { margin: 0.5in; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, tr, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;background:#0a0a0a}
+  ::selection{background:#d8ff3e;color:#0a0a0a}
+  a{text-decoration:none;color:inherit}
+  .navlink:hover{color:#e8e8e6 !important}
+  .film:hover .poster{border-color:#3a3a3a}
+  .film:hover .title{color:#fff}
+  .rec:hover{border-color:#3a3a3a !important}
+  .rec:hover .recarrow{color:#d8ff3e;transform:translateX(3px)}
+</style>
+</helmet>
+<div style="background:#0a0a0a;color:#e8e8e6;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh">
+
+  <!-- NAV -->
+  <header style="position:sticky;top:0;z-index:20;background:rgba(10,10,10,0.92);backdrop-filter:blur(8px);border-bottom:1px solid #1c1c1c;display:flex;align-items:center;justify-content:space-between;padding:18px 48px">
+    <a href="CineEsprit Anasayfa.dc.html" style="font-family:Georgia,serif;font-style:italic;font-size:23px;letter-spacing:-0.01em">CineEsprit</a>
+    <nav style="display:flex;align-items:center;gap:34px">
+      <a href="#" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a88">Program</a>
+      <a href="#" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a88">Arşiv</a>
+      <a href="CineEsprit Festival Takvimi.dc.html" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a88">Festivaller</a>
+      <a href="CineEsprit Listeleme.dc.html" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a88;display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
+        Ara
+      </a>
+      <span style="width:30px;height:30px;border:1px solid #d8ff3e;border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-style:italic;font-size:14px;color:#d8ff3e">M</span>
+    </nav>
+  </header>
+
+  <main style="padding:0 48px">
+
+    <!-- PROFILE HEADER -->
+    <section style="padding:56px 0 40px;border-bottom:1px solid #1c1c1c;display:flex;align-items:center;gap:32px">
+      <div style="width:84px;height:84px;flex:none;border:1px solid #d8ff3e;border-radius:3px;background:#0d0d0d;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-style:italic;font-size:38px;color:#d8ff3e">M</div>
+      <div style="flex:1">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#6a6a68;margin-bottom:12px">SİNEFİL · ÜYE</div>
+        <h1 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:44px;line-height:1;letter-spacing:-0.01em;margin:0">Mira Yıldırım</h1>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#9a9a98;margin-top:12px">ÜYELİK: MART 2024 &nbsp;·&nbsp; <span style="color:#d8ff3e">42 FİLM İZLENDİ</span> &nbsp;·&nbsp; 18 FESTİVAL TAKİBİ</div>
+      </div>
+      <a href="#" style="font-family:inherit;font-size:13px;font-weight:500;letter-spacing:0.04em;color:#e8e8e6;border:1px solid #3a3a3a;border-radius:2px;padding:12px 22px;flex:none">Profili Düzenle</a>
+    </section>
+
+    <!-- WATCH HISTORY -->
+    <section style="padding:56px 0;border-bottom:1px solid #1c1c1c">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:32px">
+        <div style="display:flex;align-items:baseline;gap:16px">
+          <h2 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:26px;margin:0">İzleme Geçmişi</h2>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#6a6a68">/ SON İZLENENLER</span>
+        </div>
+        <a href="#" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8a8a88">Tümü →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:20px">
+        <sc-for list="{{ history }}" as="film" hint-placeholder-count="6">
+          <a href="CineEsprit Film Detay.dc.html" class="film" style="display:block">
+            <div class="poster" style="aspect-ratio:2/3;background:repeating-linear-gradient(135deg,#1a1a1a 0 9px,#151515 9px 18px);border:1px solid #242424;border-radius:3px;position:relative;display:flex;align-items:flex-end;padding:9px;transition:border-color .18s">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.1em;color:{{ film.tagColor }};border:1px solid {{ film.tagBorder }};padding:3px 5px;background:#0a0a0a">{{ film.cat }}</span>
+            </div>
+            <h3 class="title" style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:14px;line-height:1.2;margin:11px 0 4px;transition:color .18s">{{ film.title }}</h3>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.1em;color:#6a6a68">{{ film.watched }}</div>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- CATEGORY DISTRIBUTION -->
+    <section style="padding:56px 0;border-bottom:1px solid #1c1c1c">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:32px">
+        <h2 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:26px;margin:0">Tercih Ettiğin Kategoriler</h2>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#6a6a68">/ 42 FİLM ÜZERİNDEN</span>
+      </div>
+
+      <div style="max-width:760px">
+        <!-- stacked bar -->
+        <div style="display:flex;height:54px;border:1px solid #242424;border-radius:3px;overflow:hidden;margin-bottom:28px">
+          <sc-for list="{{ dist }}" as="d" hint-placeholder-count="3">
+            <div style="width:{{ d.pct }}%;background:{{ d.fill }};display:flex;align-items:center;justify-content:center;border-right:1px solid #0a0a0a">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:{{ d.labelColor }}">{{ d.pctLabel }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <!-- legend -->
+        <div style="display:flex;flex-direction:column;gap:0">
+          <sc-for list="{{ dist }}" as="d" hint-placeholder-count="3">
+            <div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid #1c1c1c">
+              <span style="width:10px;height:10px;flex:none;background:{{ d.fill }};border:1px solid {{ d.swatchBorder }}"></span>
+              <span style="font-family:Georgia,serif;font-style:italic;font-size:18px;width:130px;flex:none">{{ d.label }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#9a9a98;width:70px;flex:none">{{ d.count }} FİLM</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#6a6a68;flex:1">{{ d.note }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:{{ d.pctColor }};flex:none">{{ d.pctLabel }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOMMENDATIONS -->
+    <section style="padding:56px 0 96px">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:32px">
+        <h2 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:26px;margin:0">Sana Özel Öneriler</h2>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.12em;color:#6a6a68">/ İZLEME GEÇMİŞİNE GÖRE</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
+        <sc-for list="{{ recs }}" as="r" hint-placeholder-count="4">
+          <a href="CineEsprit Film Detay.dc.html" class="rec" style="display:flex;gap:20px;border:1px solid #242424;border-radius:3px;background:#0d0d0d;padding:20px;transition:border-color .2s">
+            <div style="width:78px;flex:none;aspect-ratio:2/3;background:repeating-linear-gradient(135deg,#1a1a1a 0 8px,#151515 8px 16px);border:1px solid #242424;border-radius:2px;display:flex;align-items:flex-start;padding:7px">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:0.08em;color:{{ r.tagColor }};border:1px solid {{ r.tagBorder }};padding:2px 4px;background:#0a0a0a">{{ r.cat }}</span>
+            </div>
+            <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.12em;color:#6a6a68;margin-bottom:7px">{{ r.meta }}</div>
+              <h3 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:20px;line-height:1.12;margin:0 0 12px">{{ r.title }}</h3>
+              <div style="margin-top:auto;border-top:1px solid #1c1c1c;padding-top:12px;display:flex;align-items:flex-start;gap:8px">
+                <span style="width:5px;height:5px;background:#d8ff3e;display:inline-block;margin-top:5px;flex:none"></span>
+                <span style="font-size:12px;line-height:1.5;color:#9a9a98">{{ r.reason }}</span>
+                <span class="recarrow" style="color:#6a6a68;font-size:13px;flex:none;margin-left:auto;transition:transform .18s,color .18s">→</span>
+              </div>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const auteur = { tagColor: "#d8ff3e", tagBorder: "#d8ff3e" };
+    const neutral = { tagColor: "#c8c8c6", tagBorder: "#3a3a3a" };
+    return {
+      history: [
+        { title: "Persona'nın Gölgesi", cat: "AUTEUR", watched: "3 GÜN ÖNCE", ...auteur },
+        { title: "Durgun Sular Bölgesi", cat: "AUTEUR", watched: "1 HAFTA ÖNCE", ...auteur },
+        { title: "Toz ve Bakır", cat: "BAĞIMSIZ", watched: "1 HAFTA ÖNCE", ...neutral },
+        { title: "Işık Üzerine Çalışmalar", cat: "DENEYSEL", watched: "2 HAFTA ÖNCE", ...neutral },
+        { title: "Mevsimsiz Kar", cat: "AUTEUR", watched: "3 HAFTA ÖNCE", ...auteur },
+        { title: "Çerçevenin Dışı", cat: "DENEYSEL", watched: "GEÇEN AY", ...neutral },
+      ],
+      dist: [
+        { label: "Auteur", count: "21", pct: 50, pctLabel: "%50", fill: "#d8ff3e", labelColor: "#0a0a0a", swatchBorder: "#d8ff3e", pctColor: "#d8ff3e", note: "EN ÇOK İZLEDİĞİN" },
+        { label: "Bağımsız", count: "13", pct: 30, pctLabel: "%30", fill: "#3a3a38", labelColor: "#c8c8c6", swatchBorder: "#4a4a48", pctColor: "#c8c8c6", note: "DÜZENLİ" },
+        { label: "Deneysel", count: "08", pct: 20, pctLabel: "%20", fill: "#1f1f1d", labelColor: "#9a9a98", swatchBorder: "#2e2e2e", pctColor: "#9a9a98", note: "ARTAN İLGİ" },
+      ],
+      recs: [
+        { title: "Yer Altı Güneşi", cat: "AUTEUR", meta: "2025 · İRAN · 121 DK", reason: "Beğendiğin “Persona'nın Gölgesi” ile aynı modernist sessizlik geleneğinden", ...auteur },
+        { title: "Beyaz Gürültünün İçinde", cat: "AUTEUR", meta: "2026 · FRANSA · 128 DK", reason: "En çok izlediğin kategori Auteur — Cannes 2026 seçkisinden", ...auteur },
+        { title: "Lizbon'a Mektuplar", cat: "BAĞIMSIZ", meta: "2025 · PORTEKİZ · 117 DK", reason: "“Toz ve Bakır” filmini izleyenlerin sıkça tercih ettiği yavaş sinema", ...neutral },
+        { title: "Sentetik Hafıza", cat: "DENEYSEL", meta: "2026 · KORE · 72 DK", reason: "Deneysel filmlere artan ilgine göre — Berlinale 2026", ...neutral },
+      ]
+    };
+  }
+}
+</script>
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "CineEsprit Profil";
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        !settleRoot.querySelector('.sc-placeholder');
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  // Project support.js may predate runtime default-seeding; push via bridge.
+  if (isDc && window.__dcSetProps && window.__dcRootName) {
+    try {
+      const dpEl = document.querySelector('script[data-dc-script]');
+      const meta = JSON.parse((dpEl && dpEl.getAttribute('data-props')) || '{}');
+      const bag = {};
+      for (const k in meta)
+        if (k[0] !== '$' && meta[k] && meta[k].default !== undefined)
+          bag[k] = meta[k].default;
+      if (Object.keys(bag).length) {
+        window.__dcSetProps(window.__dcRootName(), bag);
+        await new Promise((r) => setTimeout(r, 50));
+      }
+    } catch (e) {}
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    for (let y = 0; y <= full; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => requestAnimationFrame(r));
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  try { await document.fonts.ready; } catch (e) {}
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+    sweep();
+    await new Promise((r) => requestAnimationFrame(r));
+  } catch (e) {}
+  // Size the PDF page to the rendered design unless the file opted into
+  // standard paper via @page{size:letter|A4|…}. Decks own their own @page.
+  // Wrappers (body, …) lose padding+margin so the frame sits at (0,0); the
+  // frame itself loses only margin — its padding is INSIDE the measured
+  // rect and must stay, or content shifts and leaves a gap at bottom/right.
+  var __m = null;
+  try { __m = (() => {
+  var STAMP = true;
+  var docEl = document.documentElement;
+  var doc = { width: docEl.scrollWidth, height: docEl.scrollHeight };
+
+  var ds = document.querySelector('deck-stage');
+  if (ds) {
+    var dw = Number(ds.getAttribute('width')) || 1920;
+    var dh = Number(ds.getAttribute('height')) || 1080;
+    var n = typeof ds.length === 'number' ? ds.length : ds.children.length;
+    var idx = typeof ds.index === 'number' ? ds.index : 0;
+    var frames = [];
+    for (var i = 0; i < n; i++) frames.push({ left: 0, top: 0, width: dw, height: dh });
+    return { kind: 'deck', source: 'declared', doc: doc, frames: frames,
+      authored: frames.map(function(){return{width:true,height:true}}),
+      deck: { width: dw, height: dh, slideCount: n, index: idx },
+      signals: { paperPage: false, pxPage: false } };
+  }
+
+  // Declared kind: a doc-page tag names the kind outright, so no signal
+  // heuristics run (like the deck branch above, signals report false —
+  // they describe inferred classifications only). The tag alone is not
+  // trusted: the element must have upgraded (shadowRoot present), so a
+  // leftover tag whose script was deleted falls through to the heuristics
+  // that handle plain markup.
+  var stageSx = window.scrollX || 0, stageSy = window.scrollY || 0;
+  var dp = document.querySelector('doc-page');
+  if (dp && dp.shadowRoot) {
+    // Crop to the sheet, not the host — the desk around it is screen-only
+    // chrome that must not land in PNG exports.
+    var sheet = dp.shadowRoot.querySelector('.sheet');
+    var sr = (sheet || dp).getBoundingClientRect();
+    return { kind: 'paper-doc', source: 'declared', doc: doc,
+      frames: [{ left: sr.left + stageSx, top: sr.top + stageSy,
+        width: sr.width, height: sr.height }],
+      authored: [{ width: false, height: false }],
+      signals: { paperPage: false, pxPage: false } };
+  }
+  var paperPage = false, pxPage = false;
+  var eachRule = function (fn) {
+    for (var s = 0; s < document.styleSheets.length; s++) {
+      var rs; try { rs = document.styleSheets[s].cssRules; } catch (e) { continue; }
+      for (var r = 0; r < rs.length; r++) {
+        fn(rs[r]);
+        if (rs[r].cssRules) for (var n = 0; n < rs[r].cssRules.length; n++) fn(rs[r].cssRules[n]);
+      }
+    }
+  };
+  eachRule(function (r) {
+    if (r.type !== 6) return;
+    var m = /\bsize\s*:\s*([^;}]+)/i.exec(r.cssText || '');
+    if (!m) return;
+    if (/\b(letter|a[3-5]|legal|ledger)\b/i.test(m[1])) paperPage = true;
+    if (/\d+(?:\.\d+)?px\b/i.test(m[1])) pxPage = true;
+  });
+  var signals = { paperPage: paperPage, pxPage: pxPage };
+
+  var pxVal = function (v) {
+    var m = /^(\d+(?:\.\d+)?)px$/.exec(v || ''); return m ? +m[1] : 0;
+  };
+  var authoredPx = function (el, prop) {
+    if (pxVal(el.style[prop])) return true;
+    var attr = el.getAttribute(prop);
+    if (attr && /^\d+$/.test(attr)) return true;
+    var hit = false;
+    eachRule(function (r) {
+      if (hit || r.type !== 1 || !r.style) return;
+      try { if (el.matches(r.selectorText) && pxVal(r.style[prop])) hit = true; } catch (e) {}
+    });
+    return hit;
+  };
+
+  var el = document.body, rootPxW = false;
+  for (;;) {
+    var kids = [];
+    for (var c = 0; c < el.children.length; c++) {
+      var t = el.children[c].tagName;
+      if (t !== 'SCRIPT' && t !== 'STYLE' && t !== 'TEMPLATE') kids.push(el.children[c]);
+    }
+    if (kids.length !== 1 || !(kids[0] instanceof HTMLElement)) break;
+    if (STAMP) el.setAttribute('data-om-frame-wrap', '');
+    el = kids[0];
+    rootPxW = authoredPx(el, 'width');
+    if (rootPxW) break;
+  }
+  if (!rootPxW) rootPxW = authoredPx(el, 'width');
+
+  // @page{size:letter} alone is a flowing doc; with a px-width root it's a
+  // fixed sheet pretending to be paper — fall through and size to render.
+  if (paperPage && !rootPxW) {
+    return { kind: 'paper-doc', source: 'inferred', doc: doc, signals: signals,
+      frames: [{ left: 0, top: 0, width: doc.width, height: doc.height }],
+      authored: [{ width: false, height: false }] };
+  }
+
+  var sx = window.scrollX || 0, sy = window.scrollY || 0;
+  var rectOf = function (e) {
+    var r = e.getBoundingClientRect();
+    var oy; try { oy = getComputedStyle(e).overflowY; } catch (err) {}
+    var h = oy === 'visible' ? Math.max(r.height, e.scrollHeight || 0) : r.height;
+    return { left: r.left + sx, top: r.top + sy, width: r.width, height: h };
+  };
+
+  // Multi-frame: ≥2 visible non-fixed children, each with authored px width
+  // AND height, all within ±2px of each other. Off unless the page opts in
+  // via data-om-multi-frame on the stop element — guards against card grids
+  // and pricing tables that match the geometry but aren't separate canvases.
+  if (el.hasAttribute('data-om-multi-frame')) {
+    var cands = [];
+    for (var k = 0; k < el.children.length; k++) {
+      var ch = el.children[k];
+      var cs; try { cs = getComputedStyle(ch); } catch (e) { continue; }
+      if (cs.display === 'none' || cs.visibility === 'hidden' || cs.position === 'fixed') continue;
+      var rc = rectOf(ch);
+      if (rc.width < 2 || rc.height < 2) continue;
+      if (!authoredPx(ch, 'width') || !authoredPx(ch, 'height')) continue;
+      cands.push(rc);
+    }
+    if (cands.length >= 2) {
+      var w0 = cands[0].width, h0 = cands[0].height, ok = true;
+      for (var q = 1; q < cands.length; q++)
+        if (Math.abs(cands[q].width - w0) > 2 || Math.abs(cands[q].height - h0) > 2) ok = false;
+      if (ok) return { kind: 'multi-frame', source: 'inferred', doc: doc, signals: signals,
+        frames: cands, authored: cands.map(function(){return{width:true,height:true}}) };
+    }
+  }
+
+  if (STAMP) el.setAttribute('data-om-frame', '');
+  return { kind: 'single-canvas', source: 'inferred', doc: doc, signals: signals,
+    frames: [rectOf(el)],
+    authored: [{ width: rootPxW, height: authoredPx(el, 'height') }] };
+})(); } catch (e) {}
+  var frame = null;
+  if (__m && __m.kind === 'single-canvas') {
+    var f = __m.frames && __m.frames[0];
+    if (f && f.width >= 200 && f.height >= 200) {
+      frame = f;
+      var fst = document.createElement('style');
+      fst.textContent = '@media print{@page{size:' + Math.ceil(f.width) + 'px ' +
+        Math.ceil(f.height) + 'px;margin:0}' +
+        'html,body,[data-om-frame-wrap]{padding:0!important;margin:0!important;background:none!important}' +
+        '[data-om-frame]{margin:0!important}}';
+      document.body.appendChild(fst);
+    }
+  }
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks (slides
+  // are sized to the page) and for fixed-size canvases (frame set, or an author
+  // px-based @page) — runs as before for flowing docs on letter/A4.
+  try {
+    if (!ds && !frame && !(__m && __m.signals && __m.signals.pxPage)) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a real @page margin only when the source has
+      // no @page of its own; computed style can't tell us (it reports screen
+      // media), so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /@page\s*\{[^}]*margin/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          if (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always') {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>

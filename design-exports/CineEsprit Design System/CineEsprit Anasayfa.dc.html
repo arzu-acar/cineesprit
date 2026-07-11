@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;background:#0a0a0a}
+  ::selection{background:#d8ff3e;color:#0a0a0a}
+  a{text-decoration:none;color:inherit}
+  .film:hover .poster{border-color:#3a3a3a}
+  .film:hover .title{color:#fff}
+  .navlink:hover{color:#e8e8e6 !important}
+  .festrow:hover{background:#101010}
+</style>
+</helmet>
+<div style="background:#0a0a0a;color:#e8e8e6;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh">
+
+  <!-- NAV -->
+  <header style="position:sticky;top:0;z-index:20;background:rgba(10,10,10,0.92);backdrop-filter:blur(8px);border-bottom:1px solid #1c1c1c;display:flex;align-items:center;justify-content:space-between;padding:18px 48px">
+    <a href="#" style="font-family:Georgia,serif;font-style:italic;font-size:23px;letter-spacing:-0.01em">CineEsprit</a>
+    <nav style="display:flex;align-items:center;gap:34px">
+      <a href="#" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#d8ff3e">Program</a>
+      <a href="#" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a88">Arşiv</a>
+      <a href="#" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a88">Festivaller</a>
+      <a href="#" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a88;display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
+        Ara
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section style="position:relative;border-bottom:1px solid #1c1c1c">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;min-height:560px">
+      <!-- still -->
+      <div style="background:repeating-linear-gradient(135deg,#161616 0 12px,#121212 12px 24px);position:relative;border-right:1px solid #1c1c1c;display:flex;align-items:flex-end;padding:24px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5a5a58;letter-spacing:0.12em;position:absolute;top:24px;left:24px">[ ÖNE ÇIKAN — SAHNE GÖRSELİ ]</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#9a9a98">35MM RESTORASYON · 4K</span>
+      </div>
+      <!-- info -->
+      <div style="padding:56px 48px;display:flex;flex-direction:column;justify-content:center">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:26px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#0a0a0a;background:#d8ff3e;padding:5px 9px">ÖNE ÇIKAN</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#d8ff3e;border:1px solid #d8ff3e;padding:4px 9px">AUTEUR</span>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;color:#6a6a68;margin-bottom:16px">CANNES 2026 · RESMİ SEÇKİ · ALTIN PALMİYE</div>
+        <h1 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:52px;line-height:0.98;letter-spacing:-0.01em;margin:0 0 20px">Sessiz Işığın Coğrafyası</h1>
+        <p style="font-size:14.5px;line-height:1.68;color:#9a9a98;max-width:420px;margin:0 0 30px">Carlos Reygadas geleneğinden, kırsal bir Anadolu kasabasında geçen, dilin ve zamanın eridiği uzun çekimli bir meditasyon. 2026'nın en çok konuşulan ilk filmi.</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#6a6a68;margin-bottom:30px">YÖN. DENİZ AKÇA · 2026 · TÜRKİYE / MEKSİKA · 138 DK</div>
+        <div style="display:flex;gap:14px;align-items:center">
+          <a href="#" style="font-family:inherit;font-size:13px;font-weight:500;letter-spacing:0.04em;color:#0a0a0a;background:#d8ff3e;border-radius:2px;padding:13px 26px">Programa Bak</a>
+          <a href="#" style="font-family:inherit;font-size:13px;font-weight:500;letter-spacing:0.04em;color:#e8e8e6;border:1px solid #3a3a3a;border-radius:2px;padding:12px 25px">Fragman →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main style="padding:0 48px">
+
+    <sc-for list="{{ blocks }}" as="block" hint-placeholder-count="3">
+      <section style="padding:64px 0;border-bottom:1px solid #1c1c1c">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:34px">
+          <div style="display:flex;align-items:baseline;gap:16px">
+            <h2 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:28px;margin:0">{{ block.title }}</h2>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#6a6a68">{{ block.meta }}</span>
+          </div>
+          <a href="#" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8a8a88">Tümü →</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+          <sc-for list="{{ block.films }}" as="film" hint-placeholder-count="4">
+            <a href="#" class="film" style="display:block">
+              <div class="poster" style="aspect-ratio:2/3;background:repeating-linear-gradient(135deg,#1a1a1a 0 10px,#151515 10px 20px);border:1px solid #242424;border-radius:3px;position:relative;display:flex;align-items:flex-start;padding:12px;transition:border-color .18s">
+                <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.14em;color:#c8c8c6;border:1px solid #3a3a3a;padding:4px 7px;background:#0a0a0a">{{ film.tag }}</span>
+              </div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#6a6a68;margin:14px 0 7px">{{ film.meta }}</div>
+              <h3 class="title" style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:19px;line-height:1.15;margin:0;transition:color .18s">{{ film.title }}</h3>
+            </a>
+          </sc-for>
+        </div>
+      </section>
+    </sc-for>
+
+    <!-- UPCOMING FESTIVALS -->
+    <section style="padding:64px 0 96px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:34px">
+        <div style="display:flex;align-items:baseline;gap:16px">
+          <h2 style="font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:28px;margin:0">Yaklaşan Festivaller</h2>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#6a6a68">SONBAHAR 2026</span>
+        </div>
+        <a href="#" class="navlink" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8a8a88">Takvim →</a>
+      </div>
+      <div style="border:1px solid #242424;border-radius:3px;background:#0d0d0d">
+        <sc-for list="{{ festivals }}" as="f" hint-placeholder-count="4">
+          <a href="#" class="festrow" style="display:flex;gap:24px;padding:22px 26px;border-bottom:1px solid #1c1c1c;align-items:center;transition:background .15s">
+            <div style="flex:none;width:90px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#d8ff3e">{{ f.dates }}</div>
+            <div style="flex:1;min-width:0;display:flex;align-items:center;gap:12px">
+              <h4 style="font-size:16px;font-weight:500;margin:0">{{ f.name }}</h4>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.12em;color:{{ f.classColor }};border:1px solid {{ f.classBorder }};background:{{ f.classBg }};padding:3px 7px">{{ f.class }}</span>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;color:#6a6a68;flex:none">{{ f.place }}</div>
+            <span style="color:#9a9a98;font-size:13px;flex:none">→</span>
+          </a>
+        </sc-for>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="border-top:1px solid #1c1c1c;padding:40px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px">
+    <span style="font-family:Georgia,serif;font-style:italic;font-size:18px">CineEsprit</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.16em;color:#6a6a68">SİNEMATEK · KATALOG · FESTİVAL TAKVİMİ — © 2026</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const nf = "#6a6a68", nb = "#242424", ng = "transparent";
+    return {
+      blocks: [
+        {
+          title: "Bağımsız",
+          meta: "/ DÜNYA SİNEMASI",
+          films: [
+            { tag: "BAĞIMSIZ", meta: "2025 · ROMANYA · 122 DK", title: "Kuzeyin Son Treni" },
+            { tag: "BAĞIMSIZ", meta: "2024 · ARJANTİN · 98 DK", title: "Toz ve Bakır" },
+            { tag: "BAĞIMSIZ", meta: "2026 · GÜRCİSTAN · 104 DK", title: "Çay Bahçesinde Akşam" },
+            { tag: "BAĞIMSIZ", meta: "2025 · PORTEKİZ · 117 DK", title: "Lizbon'a Mektuplar" }
+          ]
+        },
+        {
+          title: "Auteur",
+          meta: "/ YÖNETMEN SİNEMASI",
+          films: [
+            { tag: "AUTEUR", meta: "1966 · İTALYA · 110 DK", title: "Persona'nın Gölgesi" },
+            { tag: "AUTEUR", meta: "1972 · JAPONYA · 140 DK", title: "Mevsimsiz Kar" },
+            { tag: "AUTEUR", meta: "2026 · FRANSA · 128 DK", title: "Beyaz Gürültünün İçinde" },
+            { tag: "AUTEUR", meta: "1979 · SSCB · 163 DK", title: "Durgun Sular Bölgesi" }
+          ]
+        },
+        {
+          title: "Deneysel",
+          meta: "/ AVANGART & SINIR",
+          films: [
+            { tag: "DENEYSEL", meta: "2023 · ALMANYA · 67 DK", title: "Işık Üzerine Çalışmalar" },
+            { tag: "DENEYSEL", meta: "1968 · ABD · 45 DK", title: "Hareketin Anatomisi" },
+            { tag: "DENEYSEL", meta: "2026 · KORE · 72 DK", title: "Sentetik Hafıza" },
+            { tag: "DENEYSEL", meta: "2024 · KANADA · 53 DK", title: "Çerçevenin Dışı" }
+          ]
+        }
+      ],
+      festivals: [
+        { dates: "02 — 12 EYL", name: "Venedik Film Festivali", class: "A SINIFI", classColor: "#0a0a0a", classBorder: "#d8ff3e", classBg: "#d8ff3e", place: "VENEDİK, İT", },
+        { dates: "04 — 14 EYL", name: "Toronto (TIFF)", class: "A SINIFI", classColor: "#0a0a0a", classBorder: "#d8ff3e", classBg: "#d8ff3e", place: "TORONTO, CA" },
+        { dates: "24 EYL — 02 EKİ", name: "Viennale", class: "BAĞIMSIZ", classColor: "#c8c8c6", classBorder: "#3a3a3a", classBg: "transparent", place: "VİYANA, AT" },
+        { dates: "06 — 17 EKİ", name: "New York Film Festivali", class: "SEÇKİ", classColor: "#c8c8c6", classBorder: "#3a3a3a", classBg: "transparent", place: "NEW YORK, US" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

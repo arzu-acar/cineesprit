@@ -29,7 +29,7 @@ export function HeroFeatured({ film, editorPick, goToFilm }: HeroFeaturedProps) 
       <div className="absolute inset-0 bg-gradient-to-t from-ce-bg via-ce-bg/50 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-ce-bg/70 to-transparent" />
 
-      <div className="relative flex h-full max-w-7xl flex-col justify-end px-6 pb-14 mx-auto">
+      <div className="relative flex h-full max-w-7xl flex-col justify-end px-4 pb-10 mx-auto sm:px-6 sm:pb-14">
         <div className="max-w-xl">
           <p className="mb-4 font-mono text-[10px] tracking-[0.2em] text-ce-accent uppercase">
             {editorPick}
@@ -41,7 +41,7 @@ export function HeroFeatured({ film, editorPick, goToFilm }: HeroFeaturedProps) 
             </p>
           ) : null}
 
-          <h1 className="mb-5 font-serif text-[48px] font-normal italic leading-[1.08] text-ce-text md:text-[56px]">
+          <h1 className="mb-5 font-serif text-[32px] font-normal italic leading-[1.08] text-ce-text sm:text-[42px] md:text-[56px]">
             {film.title}
           </h1>
 

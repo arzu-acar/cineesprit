@@ -2,6 +2,7 @@ import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { createSupabaseServerClient } from "@lib/supabase/server";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { MobileMenu } from "./MobileMenu";
 
 export async function NavBar() {
   const [t, locale, supabase] = await Promise.all([
@@ -20,7 +21,7 @@ export async function NavBar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-ce-border bg-ce-bg/90 backdrop-blur-sm">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
         <Link
           href="/"
           className="font-serif text-[22px] italic leading-none text-ce-text transition-colors hover:text-ce-accent"
@@ -28,7 +29,8 @@ export async function NavBar() {
           CineEsprit
         </Link>
 
-        <ul className="flex items-center gap-8">
+        {/* Desktop nav */}
+        <ul className="hidden md:flex items-center gap-8">
           {navLinks.map(({ label, href }) => (
             <li key={href}>
               <Link
@@ -63,6 +65,14 @@ export async function NavBar() {
             <LocaleSwitcher currentLocale={locale} />
           </li>
         </ul>
+
+        {/* Mobile hamburger */}
+        <MobileMenu
+          navLinks={navLinks}
+          loginLabel={t("login")}
+          userSlug={user?.email?.split("@")[0]}
+          currentLocale={locale}
+        />
       </nav>
     </header>
   );

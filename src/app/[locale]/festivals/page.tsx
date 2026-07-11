@@ -62,7 +62,7 @@ export default async function FestivalsPage({
     <>
       <NavBar />
 
-      <main className="mx-auto max-w-7xl px-6 py-12">
+      <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         <SectionTitle title={t("title")} meta={metaLabel} index="04" />
 
         <div className="mb-10">
@@ -91,7 +91,7 @@ export default async function FestivalsPage({
       </main>
 
       <footer className="border-t border-ce-border mt-16">
-        <div className="mx-auto max-w-7xl px-6 py-8 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-4 py-8 flex items-center justify-between sm:px-6">
           <span className="font-serif italic text-ce-text-secondary text-[15px]">CineEsprit</span>
           <p className="font-mono text-[10px] tracking-[0.1em] text-ce-muted uppercase">
             {locale === "en" ? "Independent · Auteur · Experimental" : "Bağımsız · Auteur · Deneysel"}

@@ -146,9 +146,9 @@ export default async function FilmDetailPage({ params }: PageProps) {
       </section>
 
       {/* Content */}
-      <main className="mx-auto max-w-7xl px-6">
+      <main className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Poster + Info grid */}
-        <div className="relative -mt-40 mb-16 grid grid-cols-1 gap-10 md:grid-cols-[260px_1fr]">
+        <div className="relative -mt-20 mb-16 grid grid-cols-1 gap-10 md:-mt-40 md:grid-cols-[260px_1fr]">
           {/* Poster */}
           <div className="hidden md:block">
             <div className="relative aspect-[2/3] w-[260px] overflow-hidden border border-ce-border bg-ce-panel">
@@ -172,7 +172,7 @@ export default async function FilmDetailPage({ params }: PageProps) {
           </div>
 
           {/* Info */}
-          <div className="pt-0 md:pt-32">
+          <div className="pt-4 md:pt-32">
             <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-1">
               {year && (
                 <span className="font-mono text-[11px] tracking-[0.14em] text-ce-muted">{year}</span>
@@ -289,7 +289,7 @@ export default async function FilmDetailPage({ params }: PageProps) {
       </main>
 
       <footer className="border-t border-ce-border">
-        <div className="mx-auto max-w-7xl px-6 py-8 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-4 py-8 flex items-center justify-between sm:px-6">
           <span className="font-serif italic text-ce-text-secondary text-[15px]">CineEsprit</span>
           <p className="font-mono text-[10px] tracking-[0.1em] text-ce-muted uppercase">
             {currentLocale === "en" ? "Independent · Auteur · Experimental" : "Bağımsız · Auteur · Deneysel"}

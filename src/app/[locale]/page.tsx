@@ -59,7 +59,7 @@ export default async function HomePage() {
           />
         ) : null}
 
-        <div className="mx-auto max-w-7xl px-6 py-16 space-y-20">
+        <div className="mx-auto max-w-7xl px-4 py-16 space-y-20 sm:px-6">
           <FilmStrip
             title={tHome("thisWeek")}
             films={featuredFilms.slice(1, 11)}
@@ -104,7 +104,7 @@ export default async function HomePage() {
       </main>
 
       <footer className="border-t border-ce-border mt-12">
-        <div className="mx-auto max-w-7xl px-6 py-8 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-4 py-8 flex items-center justify-between sm:px-6">
           <span className="font-serif italic text-ce-text-secondary text-[15px]">
             CineEsprit
           </span>

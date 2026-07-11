@@ -85,7 +85,7 @@ export default async function FilmsPage({
     <>
       <NavBar />
 
-      <main className="mx-auto max-w-7xl px-6 py-12">
+      <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         <SectionTitle
           title={t("title")}
           meta={resultLabel}
@@ -144,7 +144,7 @@ export default async function FilmsPage({
       </main>
 
       <footer className="border-t border-ce-border mt-16">
-        <div className="mx-auto max-w-7xl px-6 py-8 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-4 py-8 flex items-center justify-between sm:px-6">
           <span className="font-serif italic text-ce-text-secondary text-[15px]">
             CineEsprit
           </span>

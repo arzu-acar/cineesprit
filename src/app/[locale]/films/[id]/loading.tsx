@@ -1,6 +1,6 @@
 export default function FilmDetailLoading() {
   return (
-    <>
+    <div className="min-h-screen bg-ce-bg">
       <div className="h-[55vh] min-h-[360px] bg-ce-panel animate-pulse" />
       <div className="mx-auto max-w-7xl px-6">
         <div className="relative -mt-40 mb-16 grid grid-cols-1 gap-10 md:grid-cols-[260px_1fr]">
@@ -15,6 +15,6 @@ export default function FilmDetailLoading() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

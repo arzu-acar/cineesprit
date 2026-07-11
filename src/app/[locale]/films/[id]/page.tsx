@@ -86,7 +86,7 @@ export default async function FilmDetailPage({ params }: PageProps) {
 
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[360px] overflow-hidden border-b border-ce-border bg-ce-panel">
-        {backdropUrl && (
+        {backdropUrl ? (
           <Image
             src={backdropUrl}
             alt={film.title}
@@ -95,8 +95,53 @@ export default async function FilmDetailPage({ params }: PageProps) {
             sizes="100vw"
             className="object-cover opacity-30"
           />
+        ) : (
+          <svg
+            className="absolute inset-0 h-full w-full"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 360"
+            preserveAspectRatio="xMidYMid slice"
+            aria-hidden="true"
+          >
+            <rect width="1440" height="360" fill="#0e0e0e" />
+            {/* Dikey şerit ayırıcılar */}
+            <line x1="360" y1="0" x2="360" y2="360" stroke="#1c1c1c" strokeWidth="1" />
+            <line x1="720" y1="0" x2="720" y2="360" stroke="#1c1c1c" strokeWidth="1" />
+            <line x1="1080" y1="0" x2="1080" y2="360" stroke="#1c1c1c" strokeWidth="1" />
+            {/* Üst perforasyonlar */}
+            {Array.from({ length: 28 }).map((_, i) => (
+              <rect
+                key={`t${i}`}
+                x={10 + i * 51.5}
+                y="10"
+                width="36"
+                height="18"
+                rx="1"
+                fill="#272727"
+                stroke="#383838"
+                strokeWidth="0.5"
+              />
+            ))}
+            {/* Alt perforasyonlar */}
+            {Array.from({ length: 28 }).map((_, i) => (
+              <rect
+                key={`b${i}`}
+                x={10 + i * 51.5}
+                y="310"
+                width="36"
+                height="18"
+                rx="1"
+                fill="#272727"
+                stroke="#383838"
+                strokeWidth="0.5"
+              />
+            ))}
+          </svg>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-ce-bg via-ce-bg/40 to-transparent" />
+        {backdropUrl
+          ? <div className="absolute inset-0 bg-gradient-to-t from-ce-bg via-ce-bg/40 to-transparent" />
+          : <div className="absolute inset-0 bg-gradient-to-t from-ce-bg/60 via-ce-bg/20 to-transparent" />
+        }
         <div className="absolute inset-0 bg-gradient-to-r from-ce-bg/60 to-transparent" />
       </section>
 
@@ -116,8 +161,11 @@ export default async function FilmDetailPage({ params }: PageProps) {
                   className="object-cover"
                 />
               ) : (
-                <div className="flex h-full items-center justify-center">
-                  <span className="font-mono text-[10px] text-ce-muted uppercase">{t("noPoster")}</span>
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[#1a1a1a]">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#3a3a3a" strokeWidth="1.5" strokeLinecap="square">
+                    <rect x="2" y="4" width="20" height="16" /><line x1="2" y1="8" x2="22" y2="8" /><line x1="2" y1="16" x2="22" y2="16" /><line x1="7" y1="4" x2="7" y2="8" /><line x1="12" y1="4" x2="12" y2="8" /><line x1="17" y1="4" x2="17" y2="8" /><line x1="7" y1="16" x2="7" y2="20" /><line x1="12" y1="16" x2="12" y2="20" /><line x1="17" y1="16" x2="17" y2="20" />
+                  </svg>
+                  <span className="font-mono text-[10px] tracking-[0.14em] text-[#3a3a3a] uppercase">{t("noPoster")}</span>
                 </div>
               )}
             </div>

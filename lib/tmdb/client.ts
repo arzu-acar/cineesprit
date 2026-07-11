@@ -14,7 +14,7 @@ export type { FilmCategory, TMDBCredits, TMDBMovieDetail, TMDBMovieSummary, TMDB
 type FetchTMDBOptions = {
   params?: Record<string, string | number | boolean | undefined>;
   revalidate?: number | false;
-  language?: string;
+  locale?: string;
 };
 
 export function tmdbLanguage(locale: string): string {
@@ -76,13 +76,13 @@ export async function fetchTMDB<T>(
   options: FetchTMDBOptions = {}
 ): Promise<T> {
   const { apiKey, baseUrl } = getTMDBEnv();
-  const { params = {}, revalidate = 3600, language = "tr-TR" } = options;
+  const { params = {}, revalidate = 3600, locale = "tr" } = options;
 
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
   const url = new URL(`${baseUrl}${normalizedPath}`);
 
   url.searchParams.set("api_key", apiKey);
-  url.searchParams.set("language", language);
+  url.searchParams.set("language", tmdbLanguage(locale));
 
   for (const [key, value] of Object.entries(params)) {
     if (value !== undefined) {
@@ -108,11 +108,10 @@ export async function fetchTMDB<T>(
 }
 
 export async function getFeaturedFilms(page = 1, locale = "tr"): Promise<TMDBMovieSummary[]> {
-  const lang = tmdbLanguage(locale);
   const pages = await Promise.all([1, 2, 3, 4, 5].map((p) =>
     fetchTMDB<TMDBPaginatedResponse<TMDBMovieSummary>>(
       "/movie/now_playing",
-      { params: { page: p, region: "TR" }, revalidate: 3600, language: lang }
+      { params: { page: p, region: "TR" }, revalidate: 3600, locale }
     )
   ));
 
@@ -127,7 +126,6 @@ export async function getFilmsByCategory(
   page = 1,
   locale = "tr"
 ): Promise<TMDBMovieSummary[]> {
-  const lang = tmdbLanguage(locale);
   const normalizedCategory = normalizeFilmCategory(category);
 
   if (!normalizedCategory) {
@@ -142,7 +140,7 @@ export async function getFilmsByCategory(
       {
         params: { page: p, region: "TR", ...CATEGORY_DISCOVER_PARAMS[normalizedCategory] },
         revalidate: 3600,
-        language: lang,
+        locale,
       }
     )
   ));
@@ -169,7 +167,8 @@ export async function getFilmDetail(
 
 export async function searchFilms(
   query: string,
-  page = 1
+  page = 1,
+  locale = "tr"
 ): Promise<TMDBMovieSummary[]> {
   const trimmedQuery = query.trim();
 
@@ -185,6 +184,7 @@ export async function searchFilms(
         page,
         include_adult: false,
       },
+      locale,
     }
   );
 
@@ -204,7 +204,6 @@ export async function discoverFilms(
   options: DiscoverFilmsOptions = {}
 ): Promise<{ results: TMDBMovieSummary[]; totalPages: number }> {
   const { query, genreId, year, language, page = 1, locale = "tr" } = options;
-  const lang = tmdbLanguage(locale);
 
   if (query && query.trim()) {
     const pages = await Promise.all([1, 2, 3].map((p) =>
@@ -213,7 +212,7 @@ export async function discoverFilms(
         {
           params: { query: query.trim(), page: p, include_adult: false },
           revalidate: 300,
-          language: lang,
+          locale,
         }
       )
     ));
@@ -237,7 +236,7 @@ export async function discoverFilms(
           page: p,
         },
         revalidate: 3600,
-        language: lang,
+        locale,
       }
     )
   ));
@@ -255,7 +254,7 @@ export const getFilmDetails = cache(async (
   return fetchTMDB<TMDBMovieDetail>(`/movie/${tmdbId}`, {
     params: { append_to_response: "credits,videos" },
     revalidate: 86400,
-    language: tmdbLanguage(locale),
+    locale,
   });
 });
 
@@ -263,15 +262,14 @@ export async function getSimilarFilms(
   tmdbId: number | string,
   locale = "tr"
 ): Promise<TMDBMovieSummary[]> {
-  const lang = tmdbLanguage(locale);
   const [p1, p2] = await Promise.all([
     fetchTMDB<TMDBPaginatedResponse<TMDBMovieSummary>>(
       `/movie/${tmdbId}/similar`,
-      { params: { page: 1 }, revalidate: 86400, language: lang }
+      { params: { page: 1 }, revalidate: 86400, locale }
     ),
     fetchTMDB<TMDBPaginatedResponse<TMDBMovieSummary>>(
       `/movie/${tmdbId}/similar`,
-      { params: { page: 2 }, revalidate: 86400, language: lang }
+      { params: { page: 2 }, revalidate: 86400, locale }
     ),
   ]);
   const seen = new Set<number>();

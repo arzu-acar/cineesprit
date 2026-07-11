@@ -95,7 +95,14 @@ export function FilmCard({
                 sizes="(max-width: 768px) 50vw, 280px"
                 className="object-cover"
               />
-            ) : null}
+            ) : (
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#1a1a1a]">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3a3a3a" strokeWidth="1.5" strokeLinecap="square">
+                  <rect x="2" y="4" width="20" height="16" /><line x1="2" y1="8" x2="22" y2="8" /><line x1="2" y1="16" x2="22" y2="16" /><line x1="7" y1="4" x2="7" y2="8" /><line x1="12" y1="4" x2="12" y2="8" /><line x1="17" y1="4" x2="17" y2="8" /><line x1="7" y1="16" x2="7" y2="20" /><line x1="12" y1="16" x2="12" y2="20" /><line x1="17" y1="16" x2="17" y2="20" />
+                </svg>
+                <span className="font-mono text-[9px] tracking-[0.12em] text-[#3a3a3a] uppercase">Görsel Yok</span>
+              </div>
+            )}
             <div className="relative z-10">
               <Badge category={category} className="px-2 py-1 text-[9px]" />
             </div>
@@ -138,7 +145,14 @@ export function FilmCard({
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
               className="object-cover"
             />
-          ) : null}
+          ) : (
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#1a1a1a]">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3a3a3a" strokeWidth="1.5" strokeLinecap="square">
+                <rect x="2" y="4" width="20" height="16" /><line x1="2" y1="8" x2="22" y2="8" /><line x1="2" y1="16" x2="22" y2="16" /><line x1="7" y1="4" x2="7" y2="8" /><line x1="12" y1="4" x2="12" y2="8" /><line x1="17" y1="4" x2="17" y2="8" /><line x1="7" y1="16" x2="7" y2="20" /><line x1="12" y1="16" x2="12" y2="20" /><line x1="17" y1="16" x2="17" y2="20" />
+              </svg>
+              <span className="font-mono text-[9px] tracking-[0.12em] text-[#3a3a3a] uppercase">Görsel Yok</span>
+            </div>
+          )}
           <div className="absolute top-[11px] left-[11px]">
             <Badge category={category} className="px-1.5 py-1 text-[9px]" />
           </div>

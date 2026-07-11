@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "cineesprit-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["-c", "rm -f .next/dev/server.json && /Users/arzuacar/.nvm/versions/node/v20.20.2/bin/node node_modules/.bin/next dev --port $PORT"],
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}

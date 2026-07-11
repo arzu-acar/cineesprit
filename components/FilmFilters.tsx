@@ -67,6 +67,12 @@ export function FilmFilters({ query, genre, year, language }: FilmFiltersProps) 
               clearTimeout((window as any).__ceSearchTimer);
               (window as any).__ceSearchTimer = setTimeout(() => update("q", val), 400);
             }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                clearTimeout((window as any).__ceSearchTimer);
+                update("q", (e.target as HTMLInputElement).value);
+              }
+            }}
           />
         </div>
       </div>

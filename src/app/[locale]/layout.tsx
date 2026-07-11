@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, IBM_Plex_Mono } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Toaster } from "sonner";
@@ -22,6 +22,10 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://cineesprit.com";
+
+export const viewport: Viewport = {
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: {

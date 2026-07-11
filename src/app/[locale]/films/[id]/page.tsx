@@ -148,7 +148,7 @@ export default async function FilmDetailPage({ params }: PageProps) {
       {/* Content */}
       <main className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Poster + Info grid */}
-        <div className="relative -mt-20 mb-16 grid grid-cols-1 gap-10 md:-mt-40 md:grid-cols-[260px_1fr]">
+        <div className="relative mt-0 mb-16 grid grid-cols-1 gap-10 md:-mt-40 md:grid-cols-[260px_1fr]">
           {/* Poster */}
           <div className="hidden md:block">
             <div className="relative aspect-[2/3] w-[260px] overflow-hidden border border-ce-border bg-ce-panel">

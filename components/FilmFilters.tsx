@@ -47,7 +47,7 @@ export function FilmFilters({ query, genre, year, language }: FilmFiltersProps) 
   const hasFilters = query || genre || year || language;
 
   const selectClass =
-    "w-full appearance-none bg-[#0d0d0d] border border-ce-border px-4 py-3 font-mono text-[11px] tracking-[0.12em] text-ce-text-secondary uppercase focus:outline-none focus:border-[#3a3a3a] transition-colors cursor-pointer";
+    "w-full appearance-none bg-[#0d0d0d] border border-ce-border px-4 py-3 font-mono text-base tracking-[0.12em] text-ce-text-secondary uppercase focus:outline-none focus:border-[#3a3a3a] transition-colors cursor-pointer";
 
   return (
     <div className={`transition-opacity ${isPending ? "opacity-60" : "opacity-100"}`}>
@@ -66,6 +66,7 @@ export function FilmFilters({ query, genre, year, language }: FilmFiltersProps) 
             autoCorrect="off"
             autoCapitalize="off"
             className="min-w-0 flex-1 bg-transparent border-none outline-none px-4 py-3 text-base text-ce-text placeholder:text-[#5a5a58]"
+            style={{ fontSize: "16px" }}
             onChange={(e) => {
               const val = e.target.value;
               clearTimeout((window as any).__ceSearchTimer);
@@ -103,6 +104,7 @@ export function FilmFilters({ query, genre, year, language }: FilmFiltersProps) 
             value={genre}
             onChange={(e) => update("genre", e.target.value)}
             className={selectClass}
+            style={{ fontSize: "16px" }}
           >
             <option value="">{t("all")}</option>
             {GENRE_IDS.map((id) => (
@@ -122,6 +124,7 @@ export function FilmFilters({ query, genre, year, language }: FilmFiltersProps) 
             value={year}
             onChange={(e) => update("year", e.target.value)}
             className={selectClass}
+            style={{ fontSize: "16px" }}
           >
             <option value="">{t("all")}</option>
             {YEARS.map((y) => (
@@ -141,6 +144,7 @@ export function FilmFilters({ query, genre, year, language }: FilmFiltersProps) 
             value={language}
             onChange={(e) => update("language", e.target.value)}
             className={selectClass}
+            style={{ fontSize: "16px" }}
           >
             <option value="">{t("all")}</option>
             {LANGUAGE_CODES.map((code) => (

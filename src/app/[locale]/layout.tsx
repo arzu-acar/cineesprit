@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Geist, IBM_Plex_Mono } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Toaster } from "sonner";
@@ -23,13 +23,6 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://cineesprit.com";
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-};
-
 export const metadata: Metadata = {
   title: {
     default: "CineEsprit",
@@ -52,6 +45,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     images: ["/og-default.png"],
+  },
+  other: {
+    viewport:
+      "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0",
   },
 };
 

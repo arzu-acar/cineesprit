@@ -61,6 +61,10 @@ export function FilmFilters({ query, genre, year, language }: FilmFiltersProps) 
             type="search"
             defaultValue={query}
             placeholder={t("searchPlaceholder")}
+            inputMode="search"
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
             className="min-w-0 flex-1 bg-transparent border-none outline-none px-4 py-3 text-base text-ce-text placeholder:text-[#5a5a58]"
             onChange={(e) => {
               const val = e.target.value;

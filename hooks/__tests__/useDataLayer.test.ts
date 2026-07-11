@@ -21,12 +21,23 @@ describe("useDataLayer", () => {
   describe("pushVirtualPageview", () => {
     it("pushes virtualPageview event with correct shape", () => {
       const { result } = renderHook(() => useDataLayer());
-      result.current.pushVirtualPageview({ pageUrl: "/films/1", pageTitle: "Mulholland Drive" });
+      result.current.pushVirtualPageview({
+        virtualPageUrl: "/films/1",
+        virtualPageTitle: "Mulholland Drive",
+        CE_pageCategory: "film",
+        CE_pageType: "detail",
+        loginState: "logged_out",
+        CE_userTrackingId: "anon",
+      });
 
       expect(mockPushDataLayer).toHaveBeenCalledWith({
         event: "virtualPageview",
-        pageUrl: "/films/1",
-        pageTitle: "Mulholland Drive",
+        virtualPageUrl: "/films/1",
+        virtualPageTitle: "Mulholland Drive",
+        CE_pageCategory: "film",
+        CE_pageType: "detail",
+        loginState: "logged_out",
+        CE_userTrackingId: "anon",
       });
     });
   });

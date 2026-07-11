@@ -36,9 +36,15 @@ input::placeholder {
   opacity: 1;
 }
 
+*, *::before, *::after {
+  touch-action: manipulation;
+}
+
 /* iOS zoom prevention — font-size must be ≥16px on focusable inputs */
 input,
 select,
-textarea {
+textarea,
+button {
   font-size: 16px !important;
+  touch-action: manipulation;
 }

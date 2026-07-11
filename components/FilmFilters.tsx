@@ -56,16 +56,16 @@ export function FilmFilters({ query, genre, year, language }: FilmFiltersProps) 
         <label className="mb-2 block font-mono text-[10px] tracking-[0.14em] text-ce-muted uppercase">
           {t("search")}
         </label>
-        <div className="border border-ce-border bg-[#0d0d0d] px-4 py-3 focus-within:border-[#3a3a3a] transition-colors">
+        <div className="flex border border-ce-border bg-[#0d0d0d] focus-within:border-[#3a3a3a] transition-colors">
           <input
             type="search"
             defaultValue={query}
             placeholder={t("searchPlaceholder")}
-            className="w-full bg-transparent border-none outline-none text-[14px] text-ce-text placeholder:text-[#5a5a58]"
+            className="min-w-0 flex-1 bg-transparent border-none outline-none px-4 py-3 text-base text-ce-text placeholder:text-[#5a5a58]"
             onChange={(e) => {
               const val = e.target.value;
               clearTimeout((window as any).__ceSearchTimer);
-              (window as any).__ceSearchTimer = setTimeout(() => update("q", val), 400);
+              (window as any).__ceSearchTimer = setTimeout(() => update("q", val), 200);
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
@@ -74,6 +74,17 @@ export function FilmFilters({ query, genre, year, language }: FilmFiltersProps) 
               }
             }}
           />
+          <button
+            type="button"
+            onClick={(e) => {
+              const input = (e.currentTarget.previousElementSibling as HTMLInputElement);
+              clearTimeout((window as any).__ceSearchTimer);
+              update("q", input.value);
+            }}
+            className="shrink-0 px-4 py-3 bg-ce-accent text-[#0a0a0a] font-mono text-[10px] tracking-[0.14em] uppercase font-semibold hover:bg-[#c8ef2e] transition-colors"
+          >
+            {t("search")}
+          </button>
         </div>
       </div>
 

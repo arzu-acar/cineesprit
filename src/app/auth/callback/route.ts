@@ -1,12 +1,8 @@
 import { NextResponse } from "next/server";
 import { createSupabaseServerClient } from "@lib/supabase/server";
 
-// Yalnızca site-içi path'lere izin ver — harici URL yönlendirmesini engelle
-const ALLOWED_PATHS = ["/", "/en", "/profile", "/en/profile", "/onboarding", "/en/onboarding", "/films", "/en/films", "/festivals", "/en/festivals"];
-
 function safeRedirectPath(value: string | null): string {
   if (!value) return "/profile";
-  // Protocol veya başka domain içeriyorsa reddet
   if (
     value.includes("://") ||
     value.startsWith("//") ||
@@ -14,9 +10,14 @@ function safeRedirectPath(value: string | null): string {
   ) {
     return "/profile";
   }
-  // Yalnızca izin verilen path prefix'leri kabul et
-  const allowed = ALLOWED_PATHS.some((p) => value === p || value.startsWith(p + "/"));
-  return allowed ? value : "/profile";
+  // Only allow known internal path prefixes
+  const segments = value.split("/").filter(Boolean);
+  if (segments.length === 0) return "/";
+  const validLocales = ["tr", "en"];
+  if (validLocales.includes(segments[0])) return value;
+  const validRoots = ["profile", "onboarding", "films", "festivals"];
+  if (validRoots.includes(segments[0])) return value;
+  return "/profile";
 }
 
 export async function GET(request: Request) {
@@ -30,6 +31,9 @@ export async function GET(request: Request) {
   }
 
   const next = safeRedirectPath(nextParam);
-  const redirectTo = next === "/en/profile" ? "/en/onboarding" : next === "/profile" ? "/onboarding" : next || "/";
+  const isNewUserPath = next === "/profile" || next === "/en/profile" || next === "/tr/profile";
+  const redirectTo = isNewUserPath
+    ? next.replace("/profile", "/onboarding")
+    : next || "/";
   return NextResponse.redirect(`${origin}${redirectTo}`);
 }

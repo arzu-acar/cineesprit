@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, IBM_Plex_Mono } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Toaster } from "sonner";
@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { VirtualPageviewTracker } from "@components/analytics/VirtualPageviewTracker";
+import { IosZoomPreventer } from "@components/IosZoomPreventer";
 import { createSupabaseServerClient } from "@lib/supabase/server";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
@@ -22,6 +23,13 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://cineesprit.com";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata: Metadata = {
   title: {
@@ -45,10 +53,6 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     images: ["/og-default.png"],
-  },
-  other: {
-    viewport:
-      "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0",
   },
 };
 
@@ -80,6 +84,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
       )}
       <body className="min-h-full flex flex-col bg-ce-bg text-ce-text">
+        <IosZoomPreventer />
         <NextIntlClientProvider messages={messages}>
           <VirtualPageviewTracker
             isLoggedIn={!!user}

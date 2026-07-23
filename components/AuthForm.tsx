@@ -8,6 +8,7 @@ type AuthFormProps = {
   initialEmail?: string;
   error?: string;
   success?: string;
+  next?: string;
 };
 
 type PasswordRules = {
@@ -33,6 +34,7 @@ export function AuthForm({
   initialEmail = "",
   error,
   success,
+  next = "",
 }: AuthFormProps) {
   const [mode, setMode] = useState<"login" | "register">(initialMode);
   const [password, setPassword] = useState("");
@@ -107,6 +109,7 @@ export function AuthForm({
       )}
 
       <form action={handleSubmit(isLogin ? signInWithEmail : signUpWithEmail)} className="space-y-4">
+        {next && <input type="hidden" name="next" value={next} />}
         {/* Email */}
         <div>
           <label className={labelClass}>E-Posta</label>
@@ -179,6 +182,7 @@ export function AuthForm({
 
       {/* Google */}
       <form action={signInWithGoogle}>
+        {next && <input type="hidden" name="next" value={next} />}
         <button
           type="submit"
           className="w-full flex items-center justify-center gap-3 border border-[#2e2e2e] bg-transparent text-ce-text font-medium text-[13px] py-[14px] transition-colors hover:border-[#3a3a3a]"

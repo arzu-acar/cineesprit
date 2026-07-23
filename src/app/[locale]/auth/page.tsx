@@ -22,6 +22,7 @@ type SearchParams = {
   error?: string;
   success?: string;
   email?: string;
+  next?: string;
 };
 
 export default async function AuthPage({
@@ -38,6 +39,7 @@ export default async function AuthPage({
   const error = params.error ?? undefined;
   const success = params.success ?? undefined;
   const email = params.email ?? "";
+  const next = params.next ?? "";
 
   return (
     <div className="min-h-screen flex">
@@ -99,6 +101,7 @@ export default async function AuthPage({
             initialEmail={email}
             error={error}
             success={success}
+            next={next}
           />
         </div>
       </div>

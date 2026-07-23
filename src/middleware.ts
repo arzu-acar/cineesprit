@@ -45,7 +45,9 @@ export async function middleware(request: NextRequest) {
   // Redirect /tr/... → /... (TR is the default, no prefix needed)
   if (pathname === "/tr" || pathname.startsWith("/tr/")) {
     const rest = pathname.slice(3); // strip "/tr"
-    return NextResponse.redirect(new URL(rest || "/", request.url), 308);
+    const redirectUrl = new URL(rest || "/", request.url);
+    redirectUrl.search = request.nextUrl.search; // preserve query string
+    return NextResponse.redirect(redirectUrl, 308);
   }
 
   // Apply intl middleware (adds locale prefix, redirects / → /tr)

@@ -83,6 +83,7 @@ export async function fetchTMDB<T>(
 
   url.searchParams.set("api_key", apiKey);
   url.searchParams.set("language", tmdbLanguage(locale));
+  url.searchParams.set("include_image_language", `${locale === "tr" ? "tr," : ""}en,null`);
 
   for (const [key, value] of Object.entries(params)) {
     if (value !== undefined) {
